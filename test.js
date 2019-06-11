@@ -16,15 +16,17 @@ const connection = mysql.createConnection({
     port: '1107',
 });
 
+
 connection.connect(function(err) {
     if(err) throw err;
     console.log("Connected!");
 });
 
-connection.query('select * from farm_sensor', function (err, result) {
-    if(err) throw err;
-    result.forEach(element => {
-        console.log(element.farm_id);
-    });
-    console.log("Query successful!");
-});
+connection.end();
+// connection.query('select * from farm_sensor', function (err, result) {
+//     if(err) throw err;
+//     result.forEach(element => {
+//         console.log(element.farm_id);
+//     });
+//     console.log("Query successful!");
+// });
